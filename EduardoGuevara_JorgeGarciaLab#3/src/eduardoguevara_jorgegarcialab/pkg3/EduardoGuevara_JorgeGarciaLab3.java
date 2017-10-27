@@ -17,6 +17,7 @@ public class EduardoGuevara_JorgeGarciaLab3 {
     static ArrayList<Cliente> clientes= new ArrayList();
     static ArrayList<Empleado> empleados = new ArrayList();
     static ArrayList<Locales> locales = new ArrayList();
+    static Persona logged;
 
     /**
      * @param args the command line arguments
@@ -242,6 +243,7 @@ public class EduardoGuevara_JorgeGarciaLab3 {
     }
     
     public static void logged(Persona user){
+        logged = user;
         String opcion = "";
         while (!opcion.equals("5")){
             opcion = menuclient();
@@ -315,7 +317,7 @@ public class EduardoGuevara_JorgeGarciaLab3 {
             opcion = JOptionPane.showInputDialog(concatenarProductos(index));
             if (esNumero(opcion)){
                 if (Integer.parseInt(opcion)-1 < locales.get(index).getProductos().size()){
-                    comprar(index);
+                    comprar(index, Integer.parseInt(opcion)-1);
                 }
             }
         }
@@ -330,7 +332,19 @@ public class EduardoGuevara_JorgeGarciaLab3 {
         return lista;
     }
     
-    public static void comprar(int index){
-        
+    public static void comprar(int index, int productPos){
+        if (((Cliente)logged).getDinero() >= ((Productos)locales.get(index).getProductos().get(productPos)).getPrecio()
+                || ((Cliente)logged).getDinero() >= ((Productos)locales.get(index).getProductos().get(productPos)).getPrecio()){
+            if (logged instanceof Cliente){
+                ((Cliente)logged).getComprados().add(locales.get(index).getProductos().get(productPos));
+            }else if (logged instanceof Empleado){
+                ((Empleado)logged).getComprados().add(locales.get(index).getProductos().get(productPos));
+            }
+            locales.get(index).getVendidos().add(locales.get(index).getProductos().get(productPos));
+            locales.get(index).getProductos().remove(productPos);
+            locales.get(index).addContVendidos();
+        }else{
+            JOptionPane.showMessageDialog(null, "Fondos Insuficientes!");
+        }
     }
 }

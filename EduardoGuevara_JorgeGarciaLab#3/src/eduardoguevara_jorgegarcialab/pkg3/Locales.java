@@ -19,13 +19,17 @@ del día el cual tendrá un 50% de descuento.*/
  */
 public class Locales {
 
+    int contVendidos;
     protected String nombre;
     private int piso;
-    private ArrayList<Empleado> empleado;
-    private ArrayList<Productos> productos;
-    private String empleadoturno;
+    private ArrayList<Empleado> empleado = new ArrayList();
+    private ArrayList<Productos> productos = new ArrayList();
+    private Empleado empleadoturno;
+    private ArrayList<Productos> vendidos = new ArrayList();
+    
 
     public Locales() {
+        contVendidos = 0;
     }
 
     public Locales(String nombre) {
@@ -33,7 +37,7 @@ public class Locales {
     }
     
 
-    public Locales(String nombre, int piso, ArrayList<Empleado> empleado, ArrayList<Productos> productos, String empleadoturno) {
+    public Locales(String nombre, int piso, ArrayList<Empleado> empleado, ArrayList<Productos> productos, Empleado empleadoturno) {
         this.nombre = nombre;
         this.piso = piso;
         this.empleado = empleado;
@@ -73,12 +77,28 @@ public class Locales {
         this.productos = productos;
     }
 
-    public String getEmpleadoturno() {
+    public Empleado getEmpleadoturno() {
         return empleadoturno;
     }
 
-    public void setEmpleadoturno(String empleadoturno) {
+    public void setEmpleadoturno(Empleado empleadoturno) {
         this.empleadoturno = empleadoturno;
+    }
+
+    public int getContVendidos() {
+        return contVendidos;
+    }
+
+    public void addContVendidos() {
+        this.contVendidos++;
+    }
+
+    public ArrayList<Productos> getVendidos() {
+        return vendidos;
+    }
+
+    public void setVendidos(ArrayList<Productos> vendidos) {
+        this.vendidos = vendidos;
     }
 
     @Override

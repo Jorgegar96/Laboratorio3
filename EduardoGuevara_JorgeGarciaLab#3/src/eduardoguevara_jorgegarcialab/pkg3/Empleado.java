@@ -5,6 +5,8 @@
  */
 package eduardoguevara_jorgegarcialab.pkg3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JorgeLuis
@@ -15,6 +17,7 @@ public class Empleado extends Persona{
     private String horarioTrabajo;
     private int productosVendidos;
     private float dinero;
+    private ArrayList<Productos> comprados = new ArrayList();
 
     public Empleado() {
         super();
@@ -58,6 +61,14 @@ public class Empleado extends Persona{
 
     public void setDinero(float dinero) {
         this.dinero = dinero;
+    }
+
+    public ArrayList<Productos> getComprados() {
+        return comprados;
+    }
+
+    public void setComprados(ArrayList<Productos> comprados) {
+        this.comprados = comprados;
     }
 
     @Override

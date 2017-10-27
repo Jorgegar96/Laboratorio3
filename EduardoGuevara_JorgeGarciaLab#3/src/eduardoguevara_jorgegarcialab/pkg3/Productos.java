@@ -17,6 +17,7 @@ public class Productos {
     private double desc;
 
     public Productos() {
+        desc = 0;
     }
 
     public Productos(double precio, String descrip, String marca, double desc) {
@@ -31,7 +32,7 @@ public class Productos {
     }
 
     public void setPrecio(double precio) {
-        this.precio = precio;
+        this.precio = precio - (precio*desc);
     }
 
     public String getDescrip() {
