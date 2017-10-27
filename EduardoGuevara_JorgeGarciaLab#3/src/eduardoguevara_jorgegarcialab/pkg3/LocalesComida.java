@@ -15,6 +15,43 @@ public class LocalesComida extends Locales{
     private int cantidadEmpleados;
     private ArrayList<Comida> productos = new ArrayList();
     private Comida productoDia;
+
+    public LocalesComida() {
+        super();
+    }
+
+    public int getCantidadEmpleados() {
+        return cantidadEmpleados;
+    }
+
+    public void setCantidadEmpleados(int cantidadEmpleados) {
+        if (cantidadEmpleados <= 4){
+            this.cantidadEmpleados = cantidadEmpleados;
+        }
+    }
+
+    public ArrayList<Comida> getProductos() {
+        return productos;
+    }
+
+    public void setProductos(ArrayList<Comida> productos) {
+        this.productos = productos;
+    }
+
+    public Comida getProductoDia() {
+        return productoDia;
+    }
+
+    public void setProductoDia(Comida productoDia) {
+        this.productoDia = productoDia;
+    }
+
+    @Override
+    public String toString() {
+        return "LocalesComida{" + "cantidadEmpleados=" + cantidadEmpleados + ", productos=" + productos + ", productoDia=" + productoDia + '}';
+    }
+    
+    
     
     
 }

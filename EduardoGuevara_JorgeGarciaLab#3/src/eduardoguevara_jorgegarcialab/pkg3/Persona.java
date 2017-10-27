@@ -18,6 +18,7 @@ public class Persona {
     private String password;
     private String correo;
     private String nombre;
+    private String apellido;
     private String ID;
     private Date nacimiento;
     private DateFormat formato = new SimpleDateFormat("mm/dd/yyyy");
@@ -74,14 +75,27 @@ public class Persona {
         this.ID = ID;
     }
 
+    public String getNacimientoS(){
+        return formato.format(nacimiento);
+    }
+    
     public Date getNacimiento() {
         return nacimiento;
     }
 
-    public void setNacimiento(Date nacimiento) {
+    public void setNacimiento(int dia, int mes, int año) {
         this.nacimiento = nacimiento;
     }
 
+    public String getApellido() {
+        return apellido;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    
     @Override
     public String toString() {
         return "Persona{" + "username=" + username + ", password=" + password + ", correo=" + correo + ", nombre=" + nombre + ", ID=" + ID + ", nacimiento=" + nacimiento + '}';
