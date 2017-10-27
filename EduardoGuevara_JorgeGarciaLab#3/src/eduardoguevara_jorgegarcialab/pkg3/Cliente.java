@@ -13,12 +13,33 @@ import java.util.ArrayList;
  */
 public class Cliente extends Persona{
     
-   private ArrayList<Producto> comprados = new ArrayList();
+   private ArrayList<Productos> comprados = new ArrayList();
    private float dinero;
 
     public Cliente() {
         super();
         
+    }
+
+    public ArrayList<Productos> getComprados() {
+        return comprados;
+    }
+
+    public void setComprados(ArrayList<Productos> comprados) {
+        this.comprados = comprados;
+    }
+
+    public float getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(float dinero) {
+        this.dinero = dinero;
+    }
+
+    @Override
+    public String toString() {
+        return "Cliente{" + "comprados=" + comprados + ", dinero=" + dinero + '}';
     }
    
    
