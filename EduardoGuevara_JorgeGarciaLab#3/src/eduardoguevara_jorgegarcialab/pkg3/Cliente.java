@@ -5,12 +5,22 @@
  */
 package eduardoguevara_jorgegarcialab.pkg3;
 
+import java.util.ArrayList;
+
 /**
  *
  * @author JorgeLuis
  */
-public class Cliente {
+public class Cliente extends Persona{
     
+   private ArrayList<Producto> comprados = new ArrayList();
+   private float dinero;
+
+    public Cliente() {
+        super();
+        
+    }
+   
    
     
 }
