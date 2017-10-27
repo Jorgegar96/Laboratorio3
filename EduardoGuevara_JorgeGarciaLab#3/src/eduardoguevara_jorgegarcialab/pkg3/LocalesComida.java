@@ -30,14 +30,6 @@ public class LocalesComida extends Locales{
         }
     }
 
-    public ArrayList<Comida> getProductos() {
-        return productos;
-    }
-
-    public void setProductos(ArrayList<Comida> productos) {
-        this.productos = productos;
-    }
-
     public Comida getProductoDia() {
         return productoDia;
     }

@@ -16,6 +16,7 @@ public class EduardoGuevara_JorgeGarciaLab3 {
     
     static ArrayList<Cliente> clientes= new ArrayList();
     static ArrayList<Empleado> empleados = new ArrayList();
+    static ArrayList<Locales> locales = new ArrayList();
 
     /**
      * @param args the command line arguments
@@ -242,19 +243,20 @@ public class EduardoGuevara_JorgeGarciaLab3 {
     
     public static void logged(Persona user){
         String opcion = "";
-        while (!opcion.equals("4")){
-            //menucliente
+        while (!opcion.equals("5")){
+            opcion = menuclient();
             switch (opcion){
                 case "1":
-                    ;
+                    comprarProductos();
                     break;
                 case "2":
-                    ;
+                    productosComprados();
                     break;
                 case "3":
-                    ;
+                    revisionSaldo();
                     break;
                 case "4":
+                    agregarSaldo();
                     break;
             }
         }
@@ -272,5 +274,63 @@ public class EduardoGuevara_JorgeGarciaLab3 {
             }
         }
         return null;
+    }
+    
+    public static String menuclient() {
+        return JOptionPane.showInputDialog("Ingrese una opcion:\n"
+                + "1: Comprar producto\n"
+                + "2: Salir");
+    }
+    
+    public static void comprarProductos(){
+        String opcion = "";
+        while (!opcion.equals((locales.size() + 1) + "")){
+            opcion = JOptionPane.showInputDialog(listaTiendas());
+            if (esNumero(opcion)){
+                if (Integer.parseInt(opcion)-1 < locales.size()){
+                    listaProductos(Integer.parseInt(opcion)-1);
+                }
+            }
+        }
+    }
+    
+    public static String listaTiendas(){
+        String lista = "Locales:\n";
+        for (Locales local : locales) {
+            lista += (locales.indexOf(local) + 1) + ") " + local.getNombre();
+            if (local instanceof Tiendas){
+                lista += "/ Tienda\n"; 
+            } else if (local instanceof Quioscos){
+                lista += "/ Quiosco\n"; 
+            }else if (local instanceof LocalesComida){
+                lista += "/ Local de Comida\n"; 
+            }
+        }
+        return lista;
+    }
+    
+    public static void listaProductos(int index){
+        String opcion = "";
+        while (!opcion.equals((locales.get(index).getProductos().size()+1)+"")){
+            opcion = JOptionPane.showInputDialog(concatenarProductos(index));
+            if (esNumero(opcion)){
+                if (Integer.parseInt(opcion)-1 < locales.get(index).getProductos().size()){
+                    comprar(index);
+                }
+            }
+        }
+    }
+    
+    public static String concatenarProductos(int index){
+        String lista = "Productos\n";
+        for (int x=0 ; x < locales.get(index).getProductos().size() ; x++){
+            lista += (locales.get(index).getProductos().indexOf(x) + 1) + ") "
+                    + locales.get(index).getProductos().get(x) + "\n";
+        }
+        return lista;
+    }
+    
+    public static void comprar(int index){
+        
     }
 }
