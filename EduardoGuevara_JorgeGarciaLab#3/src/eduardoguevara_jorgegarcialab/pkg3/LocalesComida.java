@@ -6,6 +6,7 @@
 package eduardoguevara_jorgegarcialab.pkg3;
 
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -27,6 +28,8 @@ public class LocalesComida extends Locales{
     public void setCantidadEmpleados(int cantidadEmpleados) {
         if (cantidadEmpleados <= 4){
             this.cantidadEmpleados = cantidadEmpleados;
+        }else {
+            JOptionPane.showMessageDialog(null, "Ya se alcanzo el máximo de empleados (4)");
         }
     }
 

@@ -26,7 +26,7 @@ public class Locales {
     private ArrayList<Productos> productos = new ArrayList();
     private Empleado empleadoturno;
     private ArrayList<Productos> vendidos = new ArrayList();
-    
+    private ArrayList<String> facturas = new ArrayList();
 
     public Locales() {
         contVendidos = 0;
