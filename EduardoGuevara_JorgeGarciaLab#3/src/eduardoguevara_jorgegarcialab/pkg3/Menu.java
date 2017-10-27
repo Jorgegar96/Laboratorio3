@@ -24,7 +24,10 @@ public class Menu {
                 + "5: Modificar tiendas\n"
                 + "6: Modificar productos\n"
                 + "7: Modificar empleados\n"
-                + "8: Salir"));
+                + "8: Salir\n"
+                + "9: Eliminar locales\n"
+                + "10: Eliminar tiendas\n"
+                + "11: Eliminar productos"));
         return opcion;
     }
 
@@ -35,7 +38,8 @@ public class Menu {
                 + "3: Modificar o agregar Empleados\n"
                 + "4: Modificar o agregar Productos\n"
                 + "5: Modificar o agregar Empleado de turno\n"
-                + "6: Salir"));
+                + "6: Salir\n"
+                + "7: Eliminar productos\n"));
         return opcion;
     }
 
@@ -61,8 +65,7 @@ public class Menu {
         opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion:\n"
                 + "1: Modificar hora de entrada\n"
                 + "2: Modificar hora de salida\n"
-                + "3: Modificar Horario\n"
-                + "4: Salir"));
+                + "3: Salir"));
         return opcion;
     }
 
@@ -98,65 +101,221 @@ public class Menu {
                 + "3: Salir"));
         return opcion;
     }
-    /*switch(Menusocio()){
-    case 1:
-    switch(menutipol()){
-    case 1:
-    locales.add(new Tiendas(JOptionPane.showInputDialog("Ingrese el nombre del local")));
-    break;
-    case 2:
-    locales.add(new Quioscos(JOptionPane.showInputDialog("Ingrese el nombre del local")));
-    break;
-    case 3:
-    locales.add(new LocalesComida(JOptionPane.showInputDialog("Ingrese el nombre del local")));
-    break;
+
+    public int menuprodu() {
+        opcion = Integer.parseInt(JOptionPane.showInputDialog("Ingrese una opcion:\n"
+                + "1: Agregar Productos\n"
+                + "2: Modificar Productos\n"
+                + "3: Salir"));
+        return opcion;
     }
-    break;
-    case 2:
-    switch(menutipop()){
-    case 1:
-    Productos.add(new Ropa());
-    break;
-    case 2:
-    Productos.add(new Juguetes());
-    break;
-    case 3:
-    Productos.add(new Comida());
-    break;
-    }
-    break;
-    case 3:
-    Personas.add(new Empleado());
-    break;
-    case 4:
-    int op = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del local a modificar"));
-    switch(menulocal()){
-    case 1:
-    Locales.get(op).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
-    break;
-    case 2:
-    Locales.get(op).setPiso(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo piso del local")))
-    break;
-    case 3:
-    modificar empleados array
-    break;
-    case 4:
-    modificar productos array
-    break;
-    }
-    break;
-    case 5:
-    switch(menutienda){
-    }
-    break;
-    case 6:
-    switch(menuproduct()){
-    }
-    break;
-    case 7:
-    switch(menuemple){
-    }
-    break;
-    }
+    /*              switch (m.menusocio()) {
+                        case 1:
+                            switch (m.menutipol()) {
+                                case 1:
+                                    locales.add(new Tiendas(JOptionPane.showInputDialog("Ingrese el nombre del local")));
+                                    break;
+                                case 2:
+                                    locales.add(new Quioscos(JOptionPane.showInputDialog("Ingrese el nombre del local")));
+                                    break;
+                                case 3:
+                                    locales.add(new LocalesComida(JOptionPane.showInputDialog("Ingrese el nombre del local")));
+                                    break;
+                            }
+                            break;
+                        case 2:
+                            switch (m.menutipop()) {
+                                case 1:
+                                    Productos.add(new Ropa());
+                                    break;
+                                case 2:
+                                    Productos.add(new Juguetes());
+                                    break;
+                                case 3:
+                                    Productos.add(new Comida());
+                                    break;
+                                case 4:
+                                    //salir
+                                    break;
+                            }
+                            break;
+                        case 3:
+                            empleados.add(new Empleado());
+                            break;
+                        case 4:
+                            int op = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del local a modificar"));
+                            switch (m.menulocal()) {
+                                case 1:
+                                    locales.get(op).setNombre(JOptionPane.showInputDialog("Ingrese el nuevo nombre"));
+                                    break;
+                                case 2:
+                                    locales.get(op).setPiso(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo piso del local")));
+                                    break;
+                                case 3:
+                                    switch (m.menuemp()) {
+                                        case 1:
+                                            locales.get(op).getEmpleado().add(new Empleado());
+                                            break;
+                                        case 2:
+                                            int posi = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del empleado a modificar: "));
+                                            switch (m.menuemple()) {
+                                                case 1:
+                                                    locales.get(op).getEmpleado().get(posi).setHoraEntrada(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva hora de entrada: ")));
+                                                    break;
+                                                case 2:
+                                                    locales.get(op).getEmpleado().get(posi).setHoraSalida(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva hora de salida: ")));
+                                                    break;
+                                                case 3:
+                                                    //salir
+                                                    break;
+                                            }
+                                            break;
+                                        case 3:
+                                            //salir
+                                            break;
+                                    }
+                                    break;
+                                case 4:
+                                    switch (m.menuprodu()) {
+                                        case 1:
+                                            switch (m.menutipop()) {
+                                                case 1:
+                                                    Productos.add(new Ropa());
+                                                    break;
+                                                case 2:
+                                                    Productos.add(new Juguetes());
+                                                    break;
+                                                case 3:
+                                                    Productos.add(new Comida());
+                                                    break;
+                                                case 4:
+                                                    //salir
+                                                    break;
+                                            }
+                                            break;
+                                        case 2:
+                                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del producto a modificar: "));
+                                            switch (m.menuproduct()) {
+                                                case 1:
+                                                    locales.get(op).getProductos().get(pos).setPrecio(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo precio: ")));
+                                                    break;
+                                                case 2:
+                                                    locales.get(op).getProductos().get(pos).setMarca(JOptionPane.showInputDialog("Ingrese la nueva marca: "));
+                                                    break;
+                                                case 3:
+                                                    locales.get(op).getProductos().get(pos).setDescrip(JOptionPane.showInputDialog("Ingrese la nueva Descripcion: "));
+                                                    break;
+                                                case 4:
+                                                    locales.get(op).getProductos().get(pos).setDesc(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo descuento: ")));
+                                                    break;
+                                                case 5:
+                                                    //salir
+                                                    break;
+                                            }
+                                            break;
+                                        case 3:
+                                            //salir
+                                            break;
+                                    }
+                                    //modificar productos array
+                                    break;
+                                case 5:
+                                    locales.get(op).setEmpleadoturno(JOptionPane.showInputDialog("Ingrese el empleado de turno"));
+                                    break;
+                                case 6:
+                                    //salir local
+                                    break;
+                            }
+                            break;
+                        case 5:
+                            int po = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion de la tienda a modificar:"));
+                            switch (m.menutienda()) {
+                                case 1:
+                                    ((Tiendas)(locales.get(po))).setTam(Integer.parseInt(JOptionPane.showInputDialog("Ingrese el nuevo tamaño de la tienda:")));
+                                    break;
+                                case 2:
+                                    switch (m.menuprodu()) {
+                                        case 1:
+                                            switch (m.menutipop()) {
+                                                case 1:
+                                                    locales.get(po).getProductos().add(new Ropa());
+                                                    break;
+                                                case 2:
+                                                    locales.get(po).getProductos().add(new Juguetes());
+                                                    break;
+                                                case 3:
+                                                    ((Tiendas)(locales.get(po))).getProductos().add(new Comida());
+                                                    break;
+                                            }
+                                            break;
+                                        case 2:
+                                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del producto a modificar: "));
+                                            switch (m.menuproduct()) {
+                                                case 1:
+                                                    ((Tiendas)(locales.get(po))).getProductos().get(pos).setPrecio(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo precio: ")));
+                                                    break;
+                                                case 2:
+                                                    ((Tiendas)locales.get(po)).getProductos().get(pos).setMarca(JOptionPane.showInputDialog("Ingrese la nueva marca: "));
+                                                    break;
+                                                case 3:
+                                                    ((Tiendas)(locales.get(po))).getProductos().get(pos).setDescrip(JOptionPane.showInputDialog("Ingrese la nueva Descripcion: "));
+                                                    break;
+                                                case 4:
+                                                    ((Tiendas)(locales.get(po))).getProductos().get(pos).setDesc(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo descuento: ")));
+                                                    break;
+                                                case 5:
+                                                    //salir
+                                                    break;
+                                            }
+                                            break;
+                                        case 3:
+                                            //salir
+                                            break;
+                                    }
+                                    break;
+                                case 3:
+                                    //salir
+                                    break;
+                            }
+                            break;
+                        case 6:
+                            int pos = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del producto a modificar: "));
+                            switch (m.menuproduct()) {       
+                                case 1:
+                                    Productos.get(pos).setPrecio(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo precio: ")));
+                                    break;
+                                case 2:
+                                    Productos.get(pos).setMarca(JOptionPane.showInputDialog("Ingrese la nueva marca: "));
+                                    break;
+                                case 3:
+                                    Productos.get(pos).setDescrip(JOptionPane.showInputDialog("Ingrese la nueva Descripcion: "));
+                                    break;
+                                case 4:
+                                    Productos.get(pos).setDesc(Float.parseFloat(JOptionPane.showInputDialog("Ingrese el nuevo descuento: ")));
+                                    break;
+                                case 5:
+                                    //salir
+                                    break;
+                            }
+                            break;
+                        case 7:
+                            int posi = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del empleado a modificar: "));
+                            switch (m.menuemple()) {
+                                case 1:
+                                    empleados.get(posi).setHoraEntrada(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva hora de entrada: ")));
+                                    break;
+                                case 2:
+                                    empleados.get(posi).setHoraSalida(Integer.parseInt(JOptionPane.showInputDialog("Ingrese la nueva hora de salida: ")));
+                                    break;
+                                case 3:
+                                    //salir
+                                    break;
+                            }
+                            break;
+                        case 8:
+                            //salir
+                            break;
+                    }static Menu m = new Menu();
+                    static ArrayList<Productos> Productos = new ArrayList();
      */
 }
