@@ -59,6 +59,7 @@ public class Productos {
         this.desc = desc;
     }
 
+    
     @Override
     public String toString() {
         return "Productos{" + "precio=" + precio + ", descrip=" + descrip + ", marca=" + marca + ", desc=" + desc + '}';

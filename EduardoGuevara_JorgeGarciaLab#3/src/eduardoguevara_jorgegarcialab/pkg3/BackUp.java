@@ -5,16 +5,12 @@
  */
 package eduardoguevara_jorgegarcialab.pkg3;
 
-import java.util.ArrayList;
-import javax.swing.JOptionPane;
-
 /**
  *
  * @author JorgeLuis
  */
-public class EduardoGuevara_JorgeGarciaLab3 {
-    
-    static ArrayList<Cliente> clientes= new ArrayList();
+public class BackUp {
+    /*static ArrayList<Cliente> clientes= new ArrayList();
     static ArrayList<Empleado> empleados = new ArrayList();
     static ArrayList<Locales> locales = new ArrayList();
     static Persona logged;
@@ -22,7 +18,7 @@ public class EduardoGuevara_JorgeGarciaLab3 {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         String opcion = "";
         while (!opcion.equals("5")){
             opcion = JOptionPane.showInputDialog(""
@@ -419,5 +415,5 @@ public class EduardoGuevara_JorgeGarciaLab3 {
         } else if (logged instanceof Empleado){
             ((Empleado)logged).addDinero(Integer.parseInt(JOptionPane.showInputDialog("Monto a Agregar")));
         }
-    }
+    }*/
 }

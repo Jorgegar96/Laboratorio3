@@ -62,6 +62,10 @@ public class Empleado extends Persona{
     public void setDinero(float dinero) {
         this.dinero = dinero;
     }
+    
+    public void addDinero(float dinero){
+        this.dinero += dinero;
+    }
 
     public ArrayList<Productos> getComprados() {
         return comprados;
