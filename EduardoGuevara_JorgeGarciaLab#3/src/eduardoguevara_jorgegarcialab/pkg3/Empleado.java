@@ -14,6 +14,7 @@ public class Empleado extends Persona{
     private int horaSalida;
     private String horarioTrabajo;
     private int productosVendidos;
+    private float dinero;
 
     public Empleado() {
         super();
@@ -49,6 +50,14 @@ public class Empleado extends Persona{
 
     public void setProductosVendidos(int productosVendidos) {
         this.productosVendidos = productosVendidos;
+    }
+
+    public float getDinero() {
+        return dinero;
+    }
+
+    public void setDinero(float dinero) {
+        this.dinero = dinero;
     }
 
     @Override
