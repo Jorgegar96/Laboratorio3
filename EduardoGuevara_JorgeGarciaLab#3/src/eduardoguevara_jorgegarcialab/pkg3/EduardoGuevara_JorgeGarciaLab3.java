@@ -461,6 +461,9 @@ public class EduardoGuevara_JorgeGarciaLab3 {
                                 int prod = Integer.parseInt(JOptionPane.showInputDialog("Ingrese la posicion del producto que quiere eliminar"));
                                 Productos.remove(prod);
                                 break;
+                            case 12: 
+                                verFacturas();
+                                break;
                         }
 
                     } else {
@@ -613,6 +616,8 @@ public class EduardoGuevara_JorgeGarciaLab3 {
             if (locales.get(index).getContVendidos() % 5 == 0) {
                 String factura = facturacion(index);
                 JOptionPane.showMessageDialog(null, factura);
+                
+                s.getFacturas().add(factura);
             }
         } else {
             JOptionPane.showMessageDialog(null, "Fondos Insuficientes!");
@@ -686,5 +691,18 @@ public class EduardoGuevara_JorgeGarciaLab3 {
         } else if (logged instanceof Empleado) {
             ((Empleado) logged).addDinero(Integer.parseInt(JOptionPane.showInputDialog("Monto a Agregar")));
         }
+    }
+    
+    public static void verFacturas(){
+         JOptionPane.showMessageDialog(null, facturaConc());
+       
+    }
+    
+    public static String facturaConc(){
+        String lista = "";
+        for (String cadena : s.getFacturas()){
+            lista += cadena + "\n"; 
+        }
+        return lista;
     }
 }

@@ -25,9 +25,6 @@ public class LocalesComida extends Locales{
         throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 
-    LocalesComida(String showInputDialog) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
 
     public int getCantidadEmpleados() {
         return cantidadEmpleados;

@@ -341,6 +341,7 @@ public class BackUp {
             locales.get(index).addContVendidos();
             if (locales.get(index).getContVendidos() % 5 == 0){
                 String factura = facturacion(index);
+                socio.getFacturas.add(factura);
                 JOptionPane.showMessageDialog(null, factura);
             }
         }else{
@@ -365,6 +366,25 @@ public class BackUp {
     
     public static void productosComprados(){
         JOptionPane.showMessageDialog(null, concatenarComprados());
+    }
+    
+    public static void verFacturas(){
+        String opcion= "";
+        while (!opcion.equals(socio.getFacturas().size()){
+            opcion = JOptionPane.showInputDialog(concatenarFacturas());
+            if(esNumero(opcion)){
+                if (Integer.parseInt(opcion)-1 < socio.getFacturas().size()){
+                    JOptionPane.showMessageDialog(facturaConc(Integer.parseInt(opcion)-1));
+                }
+            }
+        }
+    }
+    
+    public static String facturaConc(){
+        String lista = "";
+        for (String cadena : socio.getFacturas()){
+            lista += cadena + "\n"; 
+        }
     }
     
     public static String concatenarComprados(){

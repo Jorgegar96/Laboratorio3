@@ -53,6 +53,14 @@ public class Locales {
         this.nombre = nombre;
     }
 
+    public ArrayList<String> getFacturas() {
+        return facturas;
+    }
+
+    public void setFacturas(ArrayList<String> facturas) {
+        this.facturas = facturas;
+    }
+
     public int getPiso() {
         return piso;
     }
